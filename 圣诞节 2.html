@@ -1,0 +1,434 @@
+<header>
+    <img src="http://s.mamhao.cn/app/activity/20160601/lottery/images/header.jpg" />
+</header>
+
+<style>
+    img {
+        max-width: 100%;
+    }
+
+    body {
+        font-family: 'microsoft yahei';
+    }
+
+    header {
+        font-size: 0;
+    }
+
+    /*抽奖外容器*/
+    .container {
+        padding: .5em;
+        background-color: #1CABC4;
+    }
+
+    #lottery {
+        background-image: url("http://s.mamhao.cn/app/activity/20160601/lottery/images/bg-01.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        background-size: cover;
+        padding: 4%;
+    }
+
+    .group-wrap {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        background: #046E81;
+        padding: 2px;
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
+        overflow: hidden
+    }
+
+    .group-wrap ul {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1
+    }
+
+    .group-wrap ul li {
+        border: 2px solid #046E81;
+        background: #fff;
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
+        overflow: hidden
+    }
+
+    .group-wrap ul li.active {
+        border: 10px solid green;
+        transform: scale(1.1);
+    }
+
+    .group-wrap ul li img {
+        width: 100%;
+    }
+
+    .group-wrap ul:nth-child(2) {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+
+    /*开始按钮*/
+    .group-wrap ul li.start {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+        background-image: url("http://s.mamhao.cn/app/activity/20160601/lottery/images/button-01.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        background-size: cover;
+        cursor: pointer
+    }
+
+    .group-wrap ul li.start:hover {
+        background-image: url("http://s.mamhao.cn/app/activity/20160601/lottery/images/button-02.png");
+    }
+
+
+    #lottery.blink {
+        -webkit-animation: blink .5s linear infinite;
+        animation: blink .5s linear infinite;
+    }
+
+    .js-start {
+        -webkit-flex: none !important;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        line-height: 60px;
+    }
+
+    @-webkit-keyframes blink {
+        0% {
+            background-image: url("http://s.mamhao.cn/app/activity/20160601/lottery/images/bg-01.png");
+        }
+
+        50% {
+            background-image: url("http://s.mamhao.cn/app/activity/20160601/lottery/images/bg-02.png");
+        }
+
+        100% {
+            background-image: url("http://s.mamhao.cn/app/activity/20160601/lottery/images/bg-01.png");
+        }
+    }
+
+    @keyframes blink {
+        0% {
+            background-image: url("http://s.mamhao.cn/app/activity/20160601/lottery/images/bg-01.png");
+        }
+
+        50% {
+            background-image: url("http://s.mamhao.cn/app/activity/20160601/lottery/images/bg-02.png");
+        }
+
+        100% {
+            background-image: url("http://s.mamhao.cn/app/activity/20160601/lottery/images/bg-01.png");
+        }
+    }
+
+    /*中奖历史记录*/
+    .history {
+        padding: 2em;
+        background: #5DC8DB;
+    }
+
+    .btn-history {
+        text-align: center;
+        max-width: 50%;
+        display: block;
+        margin: 0 auto;
+        border: 0;
+        background: none;
+        cursor: pointer;
+    }
+
+    /*游戏规则*/
+    .rules {
+        background: #5DC8DB;
+    }
+
+    .rules-title {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        padding: .6em 1.5em;
+        text-align: center;
+        font-size: 18px;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        color: #fff;
+    }
+
+    .rules-title span {
+        padding: 0 15px;
+    }
+
+    .rules-title:after,
+    .rules-title:before {
+        height: 0;
+        border-top: 1px solid #fff;
+        content: '';
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1
+    }
+
+    .rules-context {
+        padding: 0 2em 1.5em 2em;
+        color: #fff;
+        line-height: 1.44;
+    }
+
+    .rules-context p {
+        margin-bottom: 10px;
+    }
+</style>
+
+<div class="container">
+    <div id="lottery" class="blink">
+        <div class="group-wrap">
+            <ul class="group">
+                <li class="unit" data-index="0"><img
+                        src="https://bkimg.cdn.bcebos.com/pic/86d6277f9e2f0708c0a43b33e524b899a901f264?x-bce-process=image/format,f_auto/watermark,image_d2F0ZXIvYmFpa2UyNzI,g_7,xp_5,yp_5,P_20/resize,m_lfit,limit_1,h_1080"
+                        alt=""></li>
+                <li class="unit" data-index="9"><img
+                        src="https://img2.baidu.com/it/u=3151475660,3385393520&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500"
+                        alt=""></li>
+                <li class="unit" data-index="8"><img
+                        src="https://img0.baidu.com/it/u=1346391526,2883573442&fm=253&fmt=auto&app=138&f=JPEG?w=648&h=500"
+                        alt=""></li>
+                <li class="unit" data-index="7"><img
+                        src="https://img14.360buyimg.com/n0/jfs/t1/170664/33/20239/243772/607ff722E2e725779/c522bafff6108853.jpg.avif"
+                        alt=""></li>
+            </ul>
+            <ul class="group"
+                style="display: flex; flex-direction: column;justify-content: space-between;align-items: center;">
+                <li class="unit" data-index="1"><img
+                        src="https://img0.baidu.com/it/u=4274454716,3303696603&fm=253&fmt=auto&app=138&f=JPEG?w=727&h=500"
+                        alt=""></li>
+                <li class="start js-start">抽奖</li>
+                <li class="unit" data-index="6"><img
+                        src="https://img14.360buyimg.com/n0/jfs/t1/112130/20/49138/48877/6710def0Fa64e0966/52b2e7788045fc7c.png.avif"
+                        alt=""></li>
+            </ul>
+            <ul class="group">
+                <li class="unit" data-index="2"><img
+                        src="https://img30.360buyimg.com/shaidan/s616x405_jfs/t1/217220/16/48437/77316/673b249dF8353cb6a/b3126337aa9999d7.jpg"
+                        alt=""></li>
+                <li class="unit" data-index="3"><img
+                        src="https://img14.360buyimg.com/n0/jfs/t1/59348/14/13129/473044/5da52ed9E20bf5bac/93e44a10a772904d.jpg.avif"
+                        alt=""></li>
+                <li class="unit" data-index="4"><img
+                        src="https://i2.hdslb.com/bfs/archive/f5261b22e4bc1b84c5e00b5a430e421ab3efae24.jpg" alt=""></li>
+                <li class="unit" data-index="5"><img
+                        src="https://img14.360buyimg.com/n0/jfs/t1/226113/35/30665/158415/675addc3Ffd6ab19a/93ea16fe51556632.png.avif"
+                        alt=""></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="history">
+    <button class="btn-history js-history"><img
+            src="http://s.mamhao.cn/app/activity/20160601/lottery/images/button-03.png" alt="" /></button>
+</div>
+
+<footer class="rules">
+    <div class="rules-title"><span>活动规则</span></div>
+    <div class="rules-context">
+        <p>1、本活动仅限登录用户参与。</p>
+        <p>2、在5月30日10:00起至6月1日24:00期间，每位登录用户每天有一次抽奖机会。分享当前页面到微信朋友圈后，返回妈妈好APP即可参与抽奖。</p>
+        <p>3、中奖后会有弹窗提示。实体奖品需要填写个人信息，客服人员在联系核实后将寄送奖品至所填地址。优惠券、妈豆中奖后即刻放入用户的妈妈好账户。如有问题，可咨询客服人员。</p>
+        <p>4、本活动最终解释权归妈妈好所有。</p>
+    </div>
+</footer>
+<script src="../../../pages/js/jquery-1.8.2.js"></script>
+
+<script>
+    /*
+     * 多宫格抽奖js
+     * 备注：这里的速度是切换样式的间隔时间，即setTimeout(functionName, time)中的time值；
+     * 速度值越小，间隔越短，转的越快。
+     */
+    var defaults = {
+        selector: '#lottery',
+        width: 3,    // 转盘宽度
+        height: 3,    // 转盘高度
+        initSpeed: 300,	// 初始转动速度
+        speed: 0,	// 当前转动速度
+        upStep: 50,   // 加速滚动步长
+        upMax: 50,   // 速度上限
+        downStep: 50,   // 减速滚动步长
+        downMax: 500,  // 减速上限
+        waiting: 3000, // 匀速转动时长
+        index: 0,    // 初始位置
+        target: 7,    // 中奖位置，可通过后台算法来获得，默认值：最便宜的一个奖项或者"谢谢参与"
+        isRunning: false, // 当前是否正在抽奖
+        aim: null, // 获取中奖号，用户可重写该事件，默认随机数字
+        beforeRoll: null, // 抽奖之前的操作，支持用户追加操作
+        beforeDown: null, // 减速之前的操作，支持用户追加操作
+        afterStop: null //结束滚动后的回调函数
+    };
+
+    var lottery = {
+
+        // 初始化用户配置
+        init: function (options) {
+            this.options = $.extend(true, defaults, options);
+            this.options.speed = this.options.initSpeed;
+            this.container = $(this.options.selector);
+            this._setup();
+        },
+
+        // 开始装配转盘
+        _setup: function () {
+
+            // 这里为每一个奖项设置一个有序的下标，方便lottery._roll的处理，已经设置的不在进行设置
+            // 初始化第一行lottery-group的序列
+            for (var i = 0; i < this.options.width; ++i) {
+                this.container.find('.group:first .unit:eq(' + i + ')').not('[data-index]').attr('data-index', i);
+            }
+
+            // 初始化最后一行lottery-group的序列
+            for (var i = lottery._count() - this.options.height + 1, j = 0, len = this.options.width + this.options.height - 2; i >= len; --i, ++j) {
+                this.container.find('.group:last .unit:eq(' + j + ')').not('[data-index]').attr('data-index', i);
+            }
+
+            // 初始化两侧lottery-group的序列
+            for (var i = 1, len = this.options.height - 2; i <= len; ++i) {
+                this.container.find('.group:eq(' + i + ') .unit:first').not('[data-index]').attr('data-index', lottery._count() - i);
+                this.container.find('.group:eq(' + i + ') .unit:last').not('[data-index]').attr('data-index', this.options.width + i - 1);
+            }
+            this._enable();
+        },
+
+        // 开启抽奖
+        _enable: function () {
+            this.container.find('.js-start').on('click', this.beforeRoll);
+        },
+
+        // 禁用抽奖
+        _disable: function () {
+            this.container.find('.js-start').off('click');
+        },
+
+        // 转盘加速
+        _up: function () {
+            var _this = this;
+            if (_this.options.speed <= _this.options.upMax) {
+                _this._constant();
+            } else {
+                _this.options.speed -= _this.options.upStep;
+                _this.upTimer = setTimeout(function () { _this._up(); }, _this.options.speed);
+            }
+        },
+
+        // 转盘匀速
+        _constant: function () {
+            var _this = this;
+            clearTimeout(_this.upTimer);
+            setTimeout(function () { _this.beforeDown(); }, _this.options.waiting);
+        },
+
+        // 减速之前的操作，支持用户追加操作（例如：从后台获取中奖号）
+        beforeDown: function () {
+            var _this = this;
+            _this.aim();
+            if (_this.options.beforeDown) {
+                _this.options.beforeDown.call(_this);
+            }
+            _this._down();
+        },
+
+        // 转盘减速
+        _down: function () {
+            var _this = this;
+            if (_this.options.speed > _this.options.downMax && _this.options.target == _this._index()) {
+                _this._stop();
+            } else {
+                _this.options.speed += _this.options.downStep;
+                _this.downTimer = setTimeout(function () { _this._down(); }, _this.options.speed);
+            }
+        },
+
+        // 转盘停止，还原设置
+        _stop: function () {
+            var _this = this;
+            clearTimeout(_this.downTimer);
+            clearTimeout(_this.rollerTimer);
+            _this.options.speed = _this.options.initSpeed;
+            _this.options.isRunning = false;
+            _this._enable();
+            if (_this.options.afterStop) {
+                _this.options.afterStop.call(_this);
+            }
+        },
+
+        // 抽奖之前的操作，支持用户追加操作
+        beforeRoll: function () {
+            var _this = lottery;
+            if (_this.options.beforeRoll) {
+                _this.options.beforeRoll.call(_this, function () {
+                    _this._roll();
+                });
+            } else {
+                _this._roll();
+            }
+        },
+
+        // 转盘滚动
+        _roll: function () {
+            var _this = this;
+            _this._disable();
+            _this.container.find('[data-index=' + _this._index() + ']').removeClass("active");
+            ++_this.options.index;
+            _this.container.find('[data-index=' + _this._index() + ']').addClass("active");
+            _this.rollerTimer = setTimeout(function () { _this._roll(); }, _this.options.speed);
+            if (!_this.options.isRunning) {
+                _this._up();
+                _this.options.isRunning = true;
+            }
+        },
+
+        // 转盘当前格子下标
+        _index: function () {
+            return this.options.index % this._count();
+        },
+
+        // 转盘总格子数
+        _count: function () {
+            return this.options.width * this.options.height - (this.options.width - 2) * (this.options.height - 2);
+        },
+
+        // 获取中奖号，用户可重写该事件，默认随机数字
+        aim: function () {
+            if (this.options.aim) {
+                this.options.aim.call(this);
+            } else {
+                // this.options.target = parseInt(parseInt(Math.random() * 10) * this._count() / 10);
+                this.options.target = 8
+                console.log('中奖号', this.options.target);
+                const dom = document.getElementsByClassName('unit')
+                console.log('dom', dom[this.options.target]);
+                // alert('中奖号' + this.options.target)
+
+            }
+        }
+    };
+
+
+
+    /*初始化抽奖程序*/
+    lottery.init({
+        width: 3,    // 转盘宽度
+        height: 4,    // 转盘高度
+        waiting: 2000 // 匀速转动时长
+    });
+</script>
